@@ -15,9 +15,10 @@ def get_filters():
 
 
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington).
+    print('\n \n Would you like to see data for \n Chicago \n New York \n Washington? \n \n')
     while True:
-        city = input("Would you like to see data for Chicago, New York, or Washington? ")
+        city = input(" Enter the city that you want to see the data:  ")
         if city.lower() not in ('chicago', 'new york', 'washington'):
             print("Not an appropriate choice.")
         else:
@@ -27,7 +28,7 @@ def get_filters():
     # get user input for month (all, january, february, ... , june)
 
     while True:
-        month = input("Which month would you like to filter by? (January, February, March, April, May, or June) or all? ")
+        month = input("\n Which month would you like to filter by? \n (January, February, March, April, May, or June) or all? ")
         if month.lower() not in ('january', 'february', 'march', 'april','may', 'june', 'all'):
             print("Not an appropriate choice.")
         else:
@@ -35,7 +36,7 @@ def get_filters():
             break
 
     while True:
-        day = input("Which day would you like to filter by? (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday) or all? ")
+        day = input("Which day would you like to filter by? \n (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday) or all? ")
         if day.lower() not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all'):
             print("Not an appropriate choice.")
         else:
@@ -59,7 +60,7 @@ def load_data(city, month, day):
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-# find the most popular hour
+    # find the most popular hour
     df['hour'] = df['Start Time'].dt.hour
 
     popular_hour = df['hour'].mode()[0]
