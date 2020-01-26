@@ -15,7 +15,7 @@ def get_filters():
 
 
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington).
     print('\n \n Would you like to see data for \n Chicago \n New York \n Washington? \n \n')
     while True:
         city = input(" Enter the city that you want to see the data:  ")
@@ -60,7 +60,7 @@ def load_data(city, month, day):
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-# find the most popular hour
+    # find the most popular hour
     df['hour'] = df['Start Time'].dt.hour
 
     popular_hour = df['hour'].mode()[0]
